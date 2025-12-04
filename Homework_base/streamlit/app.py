@@ -15,7 +15,7 @@ st.set_page_config(
 # Кэшируем модель (загружается только один раз)
 @st.cache_resource 
 def load_model():
-    with open("streamlit/models/cars_model.pkl", "rb") as f:
+    with open("Homework_base/streamlit/models/cars_model.pkl", "rb") as f:
         model = pickle.load(f)
     return model
 
@@ -23,12 +23,12 @@ def load_model():
 #Это основной датасет. Поскольку деплоится на стримлит не от папки где лежит app.py, а от домашней папки нужно поменять пути ниже для локального запуска!
 @st.cache_data
 def load_train_raw():
-    return pd.read_csv("streamlit/data/cars_train.csv")
+    return pd.read_csv("Homework_base/streamlit/data/cars_train.csv")
 
 #Это предобработанный датасет
 @st.cache_data
 def load_train_prep():
-    return pd.read_csv("streamlit/data/cars_train_prep_OHE.csv")
+    return pd.read_csv("Homework_base/streamlit/data/cars_train_prep_OHE.csv")
 
 #А это 
 @st.cache_data
