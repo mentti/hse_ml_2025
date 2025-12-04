@@ -20,15 +20,15 @@ def load_model():
     return model
 
 #Поскольку у нас требования в задании непонятно как сформулированы сделаем функции для загрузки всего подряд, чтобы на всем подряд поделать EDA. >:|
-#Это основной датасет
+#Это основной датасет. Поскольку деплоится на стримлит не от папки где лежит app.py, а от домашней папки нужно поменять пути ниже для локального запуска!
 @st.cache_data
 def load_train_raw():
-    return pd.read_csv("data/cars_train.csv")
+    return pd.read_csv("streamlit/data/cars_train.csv")
 
 #Это предобработанный датасет
 @st.cache_data
 def load_train_prep():
-    return pd.read_csv("data/cars_train_prep_OHE.csv")
+    return pd.read_csv("streamlit/data/cars_train_prep_OHE.csv")
 
 #А это 
 @st.cache_data
