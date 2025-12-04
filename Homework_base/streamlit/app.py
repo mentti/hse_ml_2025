@@ -15,7 +15,7 @@ st.set_page_config(
 # Кэшируем модель (загружается только один раз)
 @st.cache_resource 
 def load_model():
-    with open("models/cars_model.pkl", "rb") as f:
+    with open("streamlit/models/cars_model.pkl", "rb") as f:
         model = pickle.load(f)
     return model
 
